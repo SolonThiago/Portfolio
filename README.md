@@ -1,12 +1,9 @@
 # 👩‍💻 Portfólio Pessoal | Maria Eduarda
 
-![Project Status](https://img.shields.io/badge/status-concluído-brightgreen)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-> "Transformo ideias complexas em interfaces bonitas e funcionais."
-
-Este é o repositório oficial do meu **Portfólio Pessoal**, desenvolvido para apresentar minha trajetória, habilidades técnicas e os principais projetos que desenvolvi como Desenvolvedora de Software.
+Este é o repositório oficial do meu **Portfólio Pessoal**, desenvolvido para apresentar habilidades técnicas e os principais projetos que desenvolvi como Desenvolvedora de Software.
 
 ---
 
@@ -56,7 +53,7 @@ Se você quiser baixar e testar este projeto na sua máquina:
 
 1. **Clone o repositório:**
 ```bash
-git clone [https://github.com/MaduSantoss/meu-portfolio.git](https://github.com/MaduSantoss/meu-portfolio.git)
+git clone [https://github.com/MaduSantoss/meu-portfolio.git]
 
 ```
 
