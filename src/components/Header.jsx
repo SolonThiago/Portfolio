@@ -1,5 +1,9 @@
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
+
+// --- ESTILOS ---
 
 const HeaderContainer = styled(motion.header)`
   width: 100%;
@@ -8,7 +12,8 @@ const HeaderContainer = styled(motion.header)`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0; left: 0; z-index: 1000;
+  top: 0; left: 0; 
+  z-index: 9999;
   
   background: rgba(5, 5, 5, 0.6);
   backdrop-filter: blur(15px);
@@ -27,6 +32,8 @@ const Logo = styled.a`
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
+  z-index: 10000;
 
   span.brackets {
     color: var(--accent-color);
@@ -52,19 +59,24 @@ const Nav = styled.nav`
 const NavLink = styled.a`
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: ${props => (props.$active ? 'white' : 'var(--text-secondary)')};
   position: relative;
+  text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
+
   &:hover { color: white; }
 
   &::after {
     content: '';
     position: absolute;
-    width: 0%; height: 2px;
+    width: ${props => (props.$active ? '100%' : '0%')}; 
+    height: 2px;
     bottom: -5px; left: 0;
     background: var(--accent-gradient);
     transition: 0.3s;
   }
+  
   &:hover::after { width: 100%; }
 `;
 
@@ -76,7 +88,9 @@ const Button = styled(motion.a)`
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
+  text-decoration: none;
   transition: 0.3s;
+  
   @media (max-width: 768px) { display: none; }
 
   &:hover {
@@ -87,35 +101,128 @@ const Button = styled(motion.a)`
 
 const MobileMenuIcon = styled.div`
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: white;
-  @media (max-width: 768px) { display: block; cursor: pointer;}
+  cursor: pointer;
+  z-index: 10000;
+  @media (max-width: 768px) { display: block; }
 `;
 
+const MobileMenu = styled(motion.div)`
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  background: #0f0f14;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: flex-start; 
+  padding-top: 120px; 
+  
+  align-items: center;
+  gap: 40px;
+  z-index: 9998;
+`;
+
+const MobileLink = styled.a`
+  font-size: 1.5rem;
+  color: ${props => (props.$active ? 'var(--accent-color)' : 'white')};
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+  
+  &:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+  }
+`;
+
+// --- LÓGICA DO COMPONENTE ---
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'projects'];
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top >= -150 && rect.top < window.innerHeight / 2) {
+            setActiveSection(sectionId);
+            break; 
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <HeaderContainer
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Logo href="#">
+      <Logo href="#home">
         <span className="brackets">&lt;</span>
         <span className="brackets">/&gt;</span>
       </Logo>
 
       <Nav>
-        <NavLink href="#home">Home</NavLink>
-        <NavLink href="#about">Sobre mim</NavLink>
-        <NavLink href="#skills">Tecnologias</NavLink> 
-        <NavLink href="#projects">Projetos</NavLink>
+        <NavLink href="#home" $active={activeSection === 'home'}>Home</NavLink>
+        <NavLink href="#about" $active={activeSection === 'about'}>Sobre mim</NavLink>
+        <NavLink href="#skills" $active={activeSection === 'skills'}>Tecnologias</NavLink> 
+        <NavLink href="#projects" $active={activeSection === 'projects'}>Projetos</NavLink>
         
         <Button href="#contact" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           Vamos Conversar
         </Button>
       </Nav>
 
-      <MobileMenuIcon>☰</MobileMenuIcon>
+      <MobileMenuIcon onClick={toggle}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </MobileMenuIcon>
+
+      <AnimatePresence>
+        {isOpen && (
+          <MobileMenu
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ duration: 0.3 }}
+          >
+            <MobileLink href="#home" onClick={toggle} $active={activeSection === 'home'}>Home</MobileLink>
+            <MobileLink href="#about" onClick={toggle} $active={activeSection === 'about'}>Sobre mim</MobileLink>
+            <MobileLink href="#skills" onClick={toggle} $active={activeSection === 'skills'}>Tecnologias</MobileLink>
+            <MobileLink href="#projects" onClick={toggle} $active={activeSection === 'projects'}>Projetos</MobileLink>
+            
+            <a 
+              href="#contact" 
+              onClick={toggle}
+              style={{ 
+                color: 'var(--accent-color)', 
+                border: '1px solid var(--accent-color)',
+                padding: '10px 30px',
+                borderRadius: '50px',
+                textDecoration: 'none',
+                fontSize: '1.2rem'
+              }}
+            >
+              Vamos Conversar
+            </a>
+          </MobileMenu>
+        )}
+      </AnimatePresence>
+
     </HeaderContainer>
   );
 };

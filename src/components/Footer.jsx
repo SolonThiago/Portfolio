@@ -6,13 +6,11 @@ const FooterContainer = styled.footer`
   padding: 80px 20px 40px;
   text-align: center;
   position: relative;
-  /* Um degradê sutil no fundo para separar do conteúdo acima */
   background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
 `;
 
-// Efeito de brilho de fundo (opcional, para dar charme)
 const GlowEffect = styled.div`
   position: absolute;
   top: -50%;
@@ -131,7 +129,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          © 2025 Feito com <FaHeart /> por Maria Eduarda.
+          © 2025 Feito por Maria Eduarda.
         </Copyright>
       </Content>
     </FooterContainer>

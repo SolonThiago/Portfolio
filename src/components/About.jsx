@@ -20,6 +20,12 @@ const GlassCard = styled(motion.div)`
   overflow: hidden;
   width: 100%;
   
+  height: auto; 
+  
+  @media (max-width: 768px) {
+    padding: 30px 25px; 
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -49,6 +55,12 @@ const Title = styled.h2`
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 `;
 
 const Text = styled.p`
@@ -56,10 +68,15 @@ const Text = styled.p`
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 20px;
-  
   width: 100%;
-  max-width: 100%;
-  text-align: justify;
+  
+  text-align: justify; 
+  
+  @media (max-width: 768px) {
+    text-align: left; 
+    font-size: 1rem;   
+    line-height: 1.6; 
+  }
 `;
 
 const About = () => {
