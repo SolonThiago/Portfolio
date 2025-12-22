@@ -1,4 +1,3 @@
-```markdown
 # 👩‍💻 Portfólio Pessoal | Maria Eduarda
 
 ![Project Status](https://img.shields.io/badge/status-concluído-brightgreen)
