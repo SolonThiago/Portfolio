@@ -1,28 +1,5 @@
 # 👩‍💻 Portfólio Pessoal | Maria Eduarda
 
-![Project Status](https://img.shields.io/badge/status-concluído-brightgreen)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
-
-> "Transformo ideias complexas em interfaces bonitas e funcionais."
-
-Este é o repositório oficial do meu **Portfólio Pessoal**, desenvolvido para apresentar minha trajetória, habilidades técnicas e os principais projetos que desenvolvi como Desenvolvedora de Software.
-
----
-
-## 🎨 Sobre o Projeto
-
-O objetivo deste projeto foi criar uma interface moderna, responsiva e interativa que refletisse minha identidade profissional. O site conta com animações fluidas, modo dark (padrão) e uma experiência de usuário (UX) otimizada.
-
-**Funcionalidades:**
-- ✨ **Hero Section:** Apresentação com animação e links sociais.
-- 📝 **Sobre Mim:** Resumo da minha carreira e formação em ADS.
-- 🛠️ **Tech Stack:** Grid interativo com as tecnologias que domino.
-- 🚀 **Projetos:** Vitrine dos meus principais trabalhos (ManCare, Clima API, NeoBank).
-- 📱 **Responsividade:** Totalmente adaptado para Mobile, Tablet e Desktop.
-
-# 👩‍💻 Portfólio Pessoal | Maria Eduarda
-
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
