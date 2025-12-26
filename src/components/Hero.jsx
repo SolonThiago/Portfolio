@@ -182,7 +182,7 @@ const Hero = () => {
         >
             <a href="https://github.com/MaduSantoss" target="_blank"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/maria-eduarda-santos-silva-868298300/" target="_blank"><FaLinkedin /></a>
-            <a href="https://w.app/skvpmi" target="_blank"><FaWhatsapp /></a>
+            <a href="https://wa.me/5579988515784" target="_blank"><FaWhatsapp /></a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=madusantoss1510@gmail.com&su=Contato%20do%20Site&body=Olá!%20Gostaria%20de%20conversar." 
             target="_blank"
             rel="noopener noreferrer"
