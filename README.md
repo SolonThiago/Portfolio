@@ -82,9 +82,9 @@ npm run dev
 
 Sinta-se à vontade para entrar em contato comigo para oportunidades ou networking!
 
-- **LinkedIn:** [Solon Thiago](https://www.linkedin.com/in/maria-eduarda-santos-silva-868298300/)
-- **E-mail:** [madusantoss1510@gmail.com](mailto:madusantoss1510@gmail.com)
-- **GitHub:** [@MaduSantoss](https://github.com/MaduSantoss)
+- **LinkedIn:** [Solon Thiago](https://www.linkedin.com/in/solonthiago/)
+- **E-mail:** [solonthiagowork@gmail.com](mailto:solonthiagowork@gmail.com)
+- **GitHub:** [@SolonThiago](https://github.com/SolonThiago)
 
 ---
 
