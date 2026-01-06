@@ -1,12 +1,16 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaHeart } from 'react-icons/fa';
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { FaEnvelope, FaHeart } from "react-icons/fa";
 
 const FooterContainer = styled.footer`
   padding: 80px 20px 40px;
   text-align: center;
   position: relative;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    transparent 100%
+  );
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
 `;
@@ -36,8 +40,10 @@ const Title = styled(motion.h2)`
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  @media (max-width: 768px) { font-size: 2rem; }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const ContactText = styled(motion.p)`
@@ -51,7 +57,7 @@ const ContactText = styled(motion.p)`
 `;
 
 const Button = styled(motion.a)`
-  background: rgba(138, 79, 255, 0.1);
+  background: rgba(50, 92, 217, 0.1);
   color: white;
   padding: 14px 35px;
   border-radius: 50px;
@@ -63,11 +69,11 @@ const Button = styled(motion.a)`
   border: 1px solid var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
-  box-shadow: 0 0 20px rgba(138, 79, 255, 0.2);
+  box-shadow: 0 0 20px rgba(50, 92, 217, 0.2);
 
   &:hover {
     background: var(--accent-color);
-    box-shadow: 0 0 40px rgba(138, 79, 255, 0.6);
+    box-shadow: 0 0 40px rgba(50, 92, 217, 0.6);
     transform: translateY(-5px);
   }
 `;
@@ -81,12 +87,21 @@ const Copyright = styled(motion.p)`
   justify-content: center;
   gap: 5px;
 
-  svg { color: var(--accent-color); animation: pulse 1.5s infinite; }
-  
+  svg {
+    color: var(--accent-color);
+    animation: pulse 1.5s infinite;
+  }
+
   @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 `;
 
@@ -94,7 +109,7 @@ const Footer = () => {
   return (
     <FooterContainer id="contact">
       <GlowEffect />
-      
+
       <Content>
         <Title
           initial={{ opacity: 0, y: 30 }}
@@ -103,25 +118,27 @@ const Footer = () => {
         >
           Vamos Construir Algo Incrível?
         </Title>
-        
+
         <ContactText
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Estou sempre aberto a novos desafios e parcerias. 
-          Se você tem uma ideia ou projeto, mande um "Oi"!
+          Estou sempre aberto a novos desafios e parcerias. Se você tem uma
+          ideia ou projeto, mande um "Oi"!
         </ContactText>
-        
-        <Button 
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=madusantoss1510@gmail.com&su=Contato%20%20&body=Olá!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar."
+
+        <Button
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=solonthiagowork@gmail.com&su=Contato%20%20&body=Olá!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar."
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.4, delay: 0.4 }}
         >
-            <FaEnvelope /> Entrar em Contato
+          <FaEnvelope /> Entrar em Contato
         </Button>
 
         <Copyright
@@ -129,7 +146,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          © 2025 Feito por Maria Eduarda.
+          © 2025 Feito por SolonDev | Todos os direitos reservados.
         </Copyright>
       </Content>
     </FooterContainer>

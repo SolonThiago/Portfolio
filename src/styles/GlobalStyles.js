@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -6,8 +6,8 @@ export const GlobalStyles = createGlobalStyle`
     --bg-gradient: radial-gradient(circle at 50% -20%, #1e1e2f, #050505); 
     --text-color: #f0f0f0;
     --text-secondary: #a0a0a0;
-    --accent-color: #8a4fff;    
-    --accent-gradient: linear-gradient(90deg, #8a4fff, #c471ed); 
+    --accent-color: #325CD9;    
+    --accent-gradient: linear-gradient(90deg, #325CD9, #6B8FFF); 
     --font-primary: 'Inter', sans-serif;
   }
 

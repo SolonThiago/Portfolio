@@ -1,4 +1,4 @@
-# 👩‍💻 Portfólio Pessoal | Maria Eduarda
+# 👩‍💻 Portfólio Pessoal | Solon Thiago
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
@@ -12,6 +12,7 @@ Este é o repositório oficial do meu **Portfólio Pessoal**, desenvolvido para 
 O objetivo deste projeto foi criar uma interface moderna, responsiva e interativa que refletisse minha identidade profissional. O site conta com animações fluidas, modo dark (padrão) e uma experiência de usuário (UX) otimizada.
 
 **Funcionalidades:**
+
 - ✨ **Hero Section:** Apresentação com animação e links sociais.
 - 📝 **Sobre Mim:** Resumo da minha carreira e formação em ADS.
 - 🛠️ **Tech Stack:** Grid interativo com as tecnologias que domino.
@@ -52,26 +53,26 @@ src/
 Se você quiser baixar e testar este projeto na sua máquina:
 
 1. **Clone o repositório:**
+
 ```bash
 git clone [https://github.com/MaduSantoss/meu-portfolio.git]
 
 ```
 
-
 2. **Instale as dependências:**
+
 ```bash
 cd meu-portfolio
 npm install
 
 ```
 
-
 3. **Rode o servidor de desenvolvimento:**
+
 ```bash
 npm run dev
 
 ```
-
 
 4. Acesse `http://localhost:5173` no seu navegador.
 
@@ -81,10 +82,10 @@ npm run dev
 
 Sinta-se à vontade para entrar em contato comigo para oportunidades ou networking!
 
-* **LinkedIn:** [Maria Eduarda Santos Silva](https://www.linkedin.com/in/maria-eduarda-santos-silva-868298300/)
-* **E-mail:** [madusantoss1510@gmail.com](mailto:madusantoss1510@gmail.com)
-* **GitHub:** [@MaduSantoss](https://github.com/MaduSantoss)
+- **LinkedIn:** [Solon Thiago](https://www.linkedin.com/in/maria-eduarda-santos-silva-868298300/)
+- **E-mail:** [madusantoss1510@gmail.com](mailto:madusantoss1510@gmail.com)
+- **GitHub:** [@MaduSantoss](https://github.com/MaduSantoss)
 
 ---
 
-Desenvolvido por **Maria Eduarda**.
+Desenvolvido por **Solon Thiago**.

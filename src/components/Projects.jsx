@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaFolder } from 'react-icons/fa';
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt, FaFolder } from "react-icons/fa";
 
 const Container = styled.section`
   max-width: 1100px;
@@ -46,7 +46,7 @@ const ProjectCard = styled(motion.div)`
     transform: translateY(-10px);
     border-color: var(--accent-color);
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 40px -10px rgba(138, 79, 255, 0.3);
+    box-shadow: 0 10px 40px -10px rgba(50, 92, 217, 0.3);
   }
 `;
 
@@ -75,12 +75,12 @@ const Tags = styled.div`
   gap: 10px;
   margin-bottom: 25px;
   flex-wrap: wrap;
-  
+
   span {
     font-size: 0.8rem;
     font-family: monospace;
     color: var(--accent-color);
-    background: rgba(138, 79, 255, 0.1);
+    background: rgba(50, 92, 217, 0.1);
     padding: 5px 10px;
     border-radius: 5px;
   }
@@ -89,7 +89,7 @@ const Tags = styled.div`
 const Links = styled.div`
   display: flex;
   gap: 20px;
-  
+
   a {
     display: flex;
     align-items: center;
@@ -97,7 +97,34 @@ const Links = styled.div`
     font-size: 0.9rem;
     font-weight: 600;
     color: #ccc;
-    &:hover { color: white; }
+    &:hover {
+      color: white;
+    }
+  }
+`;
+
+const ViewMoreButton = styled(motion.a)`
+  background: rgba(50, 92, 217, 0.1);
+  color: white;
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(50, 92, 217, 0.2);
+  margin: 40px auto 0;
+  width: fit-content;
+
+  &:hover {
+    background: var(--accent-color);
+    box-shadow: 0 0 40px rgba(50, 92, 217, 0.6);
+    transform: translateY(-5px);
   }
 `;
 
@@ -105,7 +132,7 @@ const Projects = () => {
   return (
     <Container id="projects">
       <HeaderInfo>
-        <Title 
+        <Title
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -113,9 +140,9 @@ const Projects = () => {
           Projetos Selecionados
         </Title>
         <Subtitle
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           transition={{ delay: 0.2, duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
           Alguns trabalhos que desenvolvi recentemente.
         </Subtitle>
@@ -123,78 +150,123 @@ const Projects = () => {
 
       <Grid>
         {/* Card 1 */}
-        <ProjectCard 
+        <ProjectCard
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <div>
-            <FolderIcon><FaFolder /></FolderIcon>
-            <ProjectTitle>Portal ManCare</ProjectTitle>
+            <FolderIcon>
+              <FaFolder />
+            </FolderIcon>
+            <ProjectTitle>Chronos</ProjectTitle>
             <ProjectDesc>
-              Plataforma web voltada à Saúde do Homem, com o objetivo de promover o bem-estar masculino por meio de informações acessíveis e confiáveis.
+              O Chronos é uma aplicação web de gestão de tempo e produtividade
+              basada na Técnica Pomodoro . Ele permite configurar ciclos de foco
+              e descanso, acompanhar estatísticas e histórico de tarefas,
+              integrar atividades em tempo real e usar elementos de gamificação
+              para manter a motivação.
             </ProjectDesc>
             <Tags>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>JavaScript ES6+</span>
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>Next.js</span>
             </Tags>
           </div>
           <Links>
-            <a href="https://github.com/MaduSantoss/ManCare"><FaGithub /> Código</a>
-            <a href="https://man-care.vercel.app"><FaExternalLinkAlt /> Demo</a>
+            <a href="https://github.com/SolonThiago/chronos" target="_blank">
+              <FaGithub /> Código
+            </a>
+            <a href="https://chronossolondev.vercel.app/" target="_blank">
+              <FaExternalLinkAlt /> Demo
+            </a>
           </Links>
         </ProjectCard>
 
         {/* Card 2 */}
-        <ProjectCard 
+        <ProjectCard
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div>
-            <FolderIcon><FaFolder /></FolderIcon>
-            <ProjectTitle>Consultor de Clima via API</ProjectTitle>
+            <FolderIcon>
+              <FaFolder />
+            </FolderIcon>
+            <ProjectTitle>As 7 Maravilhas do Mundo Moderno</ProjectTitle>
             <ProjectDesc>
-              Projeto em terminal que consulta a API OpenWeatherMap para exibir a temperatura e o clima atual de uma cidade.
+              O site apresenta as 7 Maravilhas do Mundo Moderno em um formato
+              visual com efeito parallax, trazendo informações históricas e
+              curiosidades sobre cada monumento de forma interativa e atrativa.
             </ProjectDesc>
             <Tags>
-              <span>Python 3</span>
-              <span>Requests</span>
-              <span>Python-Dotenv</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
             </Tags>
           </div>
           <Links>
-            <a href="https://github.com/MaduSantoss/consultor-clima"><FaGithub /> Código</a>
+            <a
+              href="https://github.com/SolonThiago/Projeto_Efeito_Paralax"
+              target="_blank"
+            >
+              <FaGithub /> Código
+            </a>
+            <a
+              href="https://solonthiago.github.io/Projeto_Efeito_Paralax/"
+              target="_blank"
+            >
+              <FaExternalLinkAlt /> Demo
+            </a>
           </Links>
         </ProjectCard>
 
         {/* Card 3 */}
-        <ProjectCard 
+        <ProjectCard
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div>
-            <FolderIcon><FaFolder /></FolderIcon>
-            <ProjectTitle>Sistema Bancário NeoBank</ProjectTitle>
+            <FolderIcon>
+              <FaFolder />
+            </FolderIcon>
+            <ProjectTitle>SolonTec</ProjectTitle>
             <ProjectDesc>
-              Simulação completa de um sistema bancário digital, apelidado de NeoBank.
+              O site SolonTec é uma plataforma educativa voltada para quem
+              deseja aprender desenvolvimento web, oferecendo conteúdos
+              organizados sobre HTML, CSS e JavaScript, do nível básico ao
+              avançado.
             </ProjectDesc>
             <Tags>
-              <span>Python 3</span>
-              <span>Flask</span>
-              <span>SQLite</span>
               <span>HTML5</span>
               <span>CSS3</span>
-
             </Tags>
           </div>
           <Links>
-            <a href="https://github.com/MaduSantoss/sistema_bancario-neo_bank"><FaGithub /> Código</a>
+            <a href="https://github.com/SolonThiago/SolonTec" target="_blank">
+              <FaGithub /> Código
+            </a>
+            <a href="https://solonthiago.github.io/SolonTec/" target="_blank">
+              <FaExternalLinkAlt /> Demo
+            </a>
           </Links>
         </ProjectCard>
       </Grid>
+
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}
+      >
+        <ViewMoreButton
+          href="https://github.com/SolonThiago"
+          target="_blank"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <FaGithub /> Visualizar mais projetos
+        </ViewMoreButton>
+      </div>
     </Container>
   );
 };
